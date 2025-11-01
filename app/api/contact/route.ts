@@ -27,16 +27,14 @@ export async function POST(request: Request) {
             }, { status: 400 });
         }
 
-        // Verify hCaptcha token
-        if (!hcaptchaToken) {
-            return NextResponse.json({ 
-                error: 'Please complete the verification challenge' 
-            }, { status: 400 });
-        }
-
-        // Verify hCaptcha with hCaptcha API
+        // Verify hCaptcha token (only if hCaptcha is configured)
         const hcaptchaSecret = process.env.HCAPTCHA_SECRET_KEY;
         if (hcaptchaSecret) {
+            if (!hcaptchaToken) {
+                return NextResponse.json({ 
+                    error: 'Please complete the verification challenge' 
+                }, { status: 400 });
+            }
             const verifyResponse = await fetch('https://hcaptcha.com/siteverify', {
                 method: 'POST',
                 headers: {

@@ -15,6 +15,7 @@ export default function Section1() {
     const [submitStatus, setSubmitStatus] = useState<{ type: "success" | "error" | null; message: string }>({ type: null, message: "" });
     const [hcaptchaToken, setHcaptchaToken] = useState<string | null>(null);
     const hcaptchaRef = useRef<HCaptcha>(null);
+    const hcaptchaSiteKey = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || "";
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -38,13 +39,18 @@ export default function Section1() {
     useEffect(() => {
         // Refresh AOS when component mounts to ensure animations work correctly
         AOS.refresh();
-    }, []);
+        
+        // Debug: Log hCaptcha sitekey status (only in development)
+        if (process.env.NODE_ENV === 'development' && !hcaptchaSiteKey) {
+            console.warn('hCaptcha sitekey is not configured. Please set NEXT_PUBLIC_HCAPTCHA_SITE_KEY in your environment variables.');
+        }
+    }, [hcaptchaSiteKey]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
-        // Check if hCaptcha is completed
-        if (!hcaptchaToken) {
+        // Check if hCaptcha is completed (only if sitekey is configured)
+        if (hcaptchaSiteKey && !hcaptchaToken) {
             setSubmitStatus({ 
                 type: "error", 
                 message: "Please complete the verification challenge." 
@@ -165,20 +171,22 @@ export default function Section1() {
                                             disabled={isSubmitting}
                                         />
                                     </div>
-                                    <div className="col-12 mt-4">
-                                        <HCaptcha
-                                            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || ""}
-                                            onVerify={handleCaptchaVerify}
-                                            onExpire={handleCaptchaExpire}
-                                            ref={hcaptchaRef}
-                                        />
-                                    </div>
+                                    {hcaptchaSiteKey && (
+                                        <div className="col-12 mt-4">
+                                            <HCaptcha
+                                                sitekey={hcaptchaSiteKey}
+                                                onVerify={handleCaptchaVerify}
+                                                onExpire={handleCaptchaExpire}
+                                                ref={hcaptchaRef}
+                                            />
+                                        </div>
+                                    )}
                                     <div className="col-12 mt-5">
                                         <button 
                                             className="btn btn-primary hover-up" 
                                             type="submit" 
                                             aria-label="submit"
-                                            disabled={isSubmitting || !hcaptchaToken}
+                                            disabled={isSubmitting || (hcaptchaSiteKey && !hcaptchaToken)}
                                         >
                                             <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                                             {!isSubmitting && (
