@@ -19,7 +19,7 @@ export default function Section1() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<{ type: "success" | "error" | null; message: string }>({ type: null, message: "" });
     const [hcaptchaToken, setHcaptchaToken] = useState<string | null>(null);
-    const hcaptchaRef = useRef<any>(null);
+    const [hcaptchaKey, setHcaptchaKey] = useState(0);
     const hcaptchaSiteKey = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || "";
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -88,7 +88,7 @@ export default function Section1() {
                 // Reset form and hCaptcha
                 setFormData({ name: "", email: "", message: "" });
                 setHcaptchaToken(null);
-                hcaptchaRef.current?.resetCaptcha();
+                setHcaptchaKey(prev => prev + 1); // Force remount of hCaptcha component
             } else {
                 setSubmitStatus({ 
                     type: "error", 
@@ -179,10 +179,10 @@ export default function Section1() {
                                     {hcaptchaSiteKey && (
                                         <div className="col-12 mt-4">
                                             <HCaptcha
+                                                key={hcaptchaKey}
                                                 sitekey={hcaptchaSiteKey}
                                                 onVerify={handleCaptchaVerify}
                                                 onExpire={handleCaptchaExpire}
-                                                ref={hcaptchaRef}
                                             />
                                         </div>
                                     )}
