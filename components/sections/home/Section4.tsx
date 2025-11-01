@@ -13,11 +13,8 @@ export default function Section4() {
                                 <div className="col-lg-6 py-8 ps-8">
                                     <h2 className="text-anime-style-1">Need a custom WordPress plugin for your project?</h2>
                                     <p className="py-4">Hire for Plugin Development - Let's talk today</p>
-                                    <Link href="mailto:info@booskills.com" className="btn btn-primary hover-up">
-                                        info@booskills.com
-                                    </Link>
-                                    <Link href="/contact" className="btn btn-outline-dark ms-md-3 mt-md-0 mt-3 hover-up">
-                                        Contact Us
+                                    <Link href="/contact" className="btn btn-primary hover-up">
+                                        Contact
                                     </Link>
                                 </div>
                                 <div className="col-lg-6">

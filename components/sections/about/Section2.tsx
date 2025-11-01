@@ -12,7 +12,7 @@ export default function Section2() {
                                 <div className="nav nav-tabs flex-lg-nowrap border-bottom-0 mb-7" id="nav-tab" role="tablist">
                                     <button className="nav-link pb-2 active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-mission" aria-label="mission" type="button" role="tab" aria-controls="nav-mission" aria-selected="true">
                                         <span className="d-flex gap-2">
-                                            <h2 className="lh-1">01</h2>
+                                            <span className="tab-number">01</span>
                                             <span className="text-start pe-lg-6">
                                                 <h4>About BooSkills</h4>
                                                 <p>Professional WordPress Plugin Development Training</p>
@@ -21,7 +21,7 @@ export default function Section2() {
                                     </button>
                                     <button className="nav-link pb-2" id="nav-vision-tab" data-bs-toggle="tab" data-bs-target="#nav-vision" aria-label="vision" type="button" role="tab" aria-controls="nav-vision" aria-selected="false">
                                         <span className="d-flex gap-2">
-                                            <h2 className="lh-1">02</h2>
+                                            <span className="tab-number">02</span>
                                             <span className="text-start pe-lg-6">
                                                 <h4>Best Instructor</h4>
                                                 <p>Expert with life-long WordPress development experience.</p>
@@ -30,7 +30,7 @@ export default function Section2() {
                                     </button>
                                     <button className="nav-link pb-2" id="nav-expertise-tab" data-bs-toggle="tab" data-bs-target="#nav-expertise" aria-label="expertise" type="button" role="tab" aria-controls="nav-expertise" aria-selected="false">
                                         <span className="d-flex gap-2">
-                                            <h2 className="lh-1">03</h2>
+                                            <span className="tab-number">03</span>
                                             <span className="text-start pe-lg-6">
                                                 <h4>Course Features</h4>
                                                 <p>Interactive, practice-based, project-focused learning.</p>
@@ -52,8 +52,8 @@ export default function Section2() {
                                                 <span className="text-primary fs-6 fw-regular">WHO WE ARE</span>
                                                 <h3 className="text-anime-style-2 pt-3">Revolutionize Your Web Knowledge</h3>
                                                 <p className="py-3">Most up-to-date course created after release of WordPress 5.0 will give you the necessary skills to create professional plugins that are secure and fast. Learn how to do it faster, smarter, easier.</p>
-                                                <Link href="mailto:info@booskills.com" className="btn btn-primary hover-up">
-                                                    <span>info@booskills.com</span>
+                                                <Link href="/contact" className="btn btn-primary hover-up">
+                                                    <span>Contact</span>
                                                 </Link>
                                                 <div className="d-flex flex-md-nowrap flex-wrap gap-5 align-items-center mt-5">
                                                     <div className="col-lg-3 d-flex flex-column">
@@ -89,10 +89,10 @@ export default function Section2() {
                                             </div>
                                             <div className="col-lg-6">
                                                 <span className="text-primary fs-6 fw-regular">BEST INSTRUCTOR</span>
-                                                <h3 className="text-anime-style-2 pt-3">Rao Abid Ali - WordPress Expert</h3>
-                                                <p className="py-3">Abid has life long experience coding and designing wordpress plugins and themes. He has coded some of the best costume plugins and solutions for his clients. He wanted to share his knowledge with wordpress coding beginners to help them achieve what they want in no time and help them deliver their projects fast.</p>
-                                                <Link href="mailto:info@booskills.com" className="btn btn-primary hover-up">
-                                                    <span>info@booskills.com</span>
+                                                <h3 className="text-anime-style-2 pt-3">Meet Your Instructor</h3>
+                                                <p className="py-3">Rao Abid Ali, WordPress Expert, has life long experience coding and designing WordPress plugins and themes. He has coded some of the best custom plugins and solutions for his clients. With over 10+ years of WordPress development experience, he wanted to share his knowledge with WordPress coding beginners to help them achieve what they want in no time and help them deliver their projects fast.</p>
+                                                <Link href="/contact" className="btn btn-primary hover-up">
+                                                    <span>Contact</span>
                                                 </Link>
                                                 <div className="d-flex flex-md-nowrap flex-wrap gap-5 align-items-center mt-5">
                                                     <div className="col-lg-3 d-flex flex-column">
@@ -128,8 +128,8 @@ export default function Section2() {
                                             </div>
                                             <div className="col-lg-6">
                                                 <span className="text-primary fs-6 fw-regular">COURSE FEATURES</span>
-                                                <h3 className="text-anime-style-2 pt-3">Interactive & Practice-Based Learning</h3>
-                                                <p className="py-3">Learn professional WordPress Plugin development through easy to understand, interactive learning with practice based exercises and project based experience. Master skills to become a Plugin Developer for a CMS that powers more than 30% of the entire internet.</p>
+                                                <h3 className="text-anime-style-2 pt-3">Why Choose This Course?</h3>
+                                                <p className="py-3">Our WordPress Plugin Development course is designed with beginners in mind. The content is easy to understand with clear explanations and step-by-step guidance. You'll learn through hands-on exercises and real-world examples that reinforce concepts. Build complete plugins from scratch and gain practical experience you can use immediately in your projects.</p>
                                                 <Link href="/buy-course" className="btn btn-primary hover-up">
                                                     <span>View Course</span>
                                                 </Link>

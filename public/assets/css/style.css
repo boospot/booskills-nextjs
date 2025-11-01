@@ -121,8 +121,19 @@
 }
 .data-analysis-about-section-2 .nav-tabs .nav-item.show .nav-link,
 .data-analysis-about-section-2 .nav-tabs .nav-link.active {
-    background-color: transparent;
+    background-color: #f7f5ff;
     border-bottom: 1px solid var(--tc-theme-primary) !important;
+    border-radius: 8px 8px 0 0;
+}
+.data-analysis-about-section-2 .nav-link .tab-number {
+    font-size: 18px;
+    font-weight: 600;
+    color: #999999;
+    line-height: 1;
+    display: inline-block;
+}
+.data-analysis-about-section-2 .nav-link.active .tab-number {
+    color: var(--tc-theme-primary);
 }
 
 .card {

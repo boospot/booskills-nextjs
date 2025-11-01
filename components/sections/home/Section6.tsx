@@ -52,7 +52,7 @@ export default function Section6() {
         <>
             {/*data-analysis-home section 6*/}
             <section className="data-analysis-home-section-6 position-relative overflow-hidden pt-120">
-                <div className="custom-container bg-primary rounded-5 position-relative">
+                <div className="custom-container bg-primary position-relative">
                     <div className="position-absolute top-0 start-50 translate-middle-x w-100 z-0">
                         <img className="w-100" src="assets/imgs/pages/data-analysis/page-home/home-section-6/dot-map.png" alt="BooSkills Course Testimonials" />
                     </div>
@@ -71,14 +71,7 @@ export default function Section6() {
                                     <SwiperSlide>
                                         <div className="col-md-10 col-12 mx-auto card-testimonial bg-white p-5 pb-0 rounded-4" data-aos="fade-up">
                                             <div className="row align-items-center">
-                                                <div className="col-lg-6">
-                                                    <div className="position-relative text-center">
-                                                        <img src="assets/imgs/pages/data-analysis/page-home/home-section-6/author-1.png" alt="Student Testimonial" />
-                                                        <div className="ellipse-1 position-absolute top-50 start-50 translate-middle" />
-                                                        <div className="ellipse-2 position-absolute top-50 start-50 translate-middle" />
-                                                    </div>
-                                                </div>
-                                                <div className="col-lg-6 ps-md-7 mt-lg-0 mt-5 pb-lg-0 pb-5">
+                                                <div className="col-lg-12">
                                                     <div className="d-flex gap-2">
                                                         <i className="bi bi-star-fill text-primary fs-7" />
                                                         <i className="bi bi-star-fill text-primary fs-7" />
@@ -98,14 +91,7 @@ export default function Section6() {
                                     <SwiperSlide>
                                         <div className="col-md-10 col-12 mx-auto card-testimonial bg-white p-5 pb-0 rounded-4" data-aos="fade-up">
                                             <div className="row align-items-center">
-                                                <div className="col-lg-6">
-                                                    <div className="position-relative text-center">
-                                                        <img src="assets/imgs/pages/data-analysis/page-home/home-section-6/author-1.png" alt="BooSkills" />
-                                                        <div className="ellipse-1 position-absolute top-50 start-50 translate-middle" />
-                                                        <div className="ellipse-2 position-absolute top-50 start-50 translate-middle" />
-                                                    </div>
-                                                </div>
-                                                <div className="col-lg-6 ps-md-7 mt-lg-0 mt-5 pb-lg-0 pb-5">
+                                                <div className="col-lg-12">
                                                     <div className="d-flex gap-2">
                                                         <i className="bi bi-star-fill text-primary fs-7" />
                                                         <i className="bi bi-star-fill text-primary fs-7" />
@@ -125,14 +111,7 @@ export default function Section6() {
                                     <SwiperSlide>
                                         <div className="col-md-10 col-12 mx-auto card-testimonial bg-white p-5 pb-0 rounded-4" data-aos="fade-up">
                                             <div className="row align-items-center">
-                                                <div className="col-lg-6">
-                                                    <div className="position-relative text-center">
-                                                        <img src="assets/imgs/pages/data-analysis/page-home/home-section-6/author-1.png" alt="BooSkills" />
-                                                        <div className="ellipse-1 position-absolute top-50 start-50 translate-middle" />
-                                                        <div className="ellipse-2 position-absolute top-50 start-50 translate-middle" />
-                                                    </div>
-                                                </div>
-                                                <div className="col-lg-6 ps-md-7 mt-lg-0 mt-5 pb-lg-0 pb-5">
+                                                <div className="col-lg-12">
                                                     <div className="d-flex gap-2">
                                                         <i className="bi bi-star-fill text-primary fs-7" />
                                                         <i className="bi bi-star-fill text-primary fs-7" />
