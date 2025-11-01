@@ -39,11 +39,6 @@ export const metadata: Metadata = {
     description: "Learn professional WordPress Plugin development with BooSkills. Most up-to-date course created after release of WordPress 5.0 will give you the necessary skills to create professional plugins.",
     keywords: ["WordPress Plugin Development", "WordPress Course", "Plugin Development", "WordPress Training", "WordPress Developer Course"],
     authors: [{ name: "Rao Abid Ali" }],
-    icons: {
-        icon: "/boo_spot_favicon.png",
-        shortcut: "/boo_spot_favicon.png",
-        apple: "/boo_spot_favicon.png",
-    },
     openGraph: {
         type: "website",
         locale: "en_US",
