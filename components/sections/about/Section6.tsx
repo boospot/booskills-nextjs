@@ -7,9 +7,9 @@ export default function Section6() {
             <section className="data-analysis-about-section-6 position-relative overflow-hidden py-100 ">
                 <div className="container position-relative z-3">
                     <div className="row align-items-center">
-                        <div className="col-md-5">
+                        <div className="col-md-6">
                             <span className="btn-text text-white">AVAILABLE FOR FREELANCE WORK</span>
-                            <h2 className="text-white my-3 text-anime-style-2">Ready to work on your WordPress project?</h2>
+                            <h2 className="text-white my-3 text-anime-style-2">Ready to work on your project?</h2>
                             <ul className="text-white">
                                 <li>
                                     <p className="text-white opacity-75">Custom WordPress Plugin Development</p>
@@ -22,7 +22,7 @@ export default function Section6() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-md-7" data-aos="zoom-in-up" data-aos-delay={100}>
+                        <div className="col-md-5 ms-md-auto" data-aos="zoom-in-up" data-aos-delay={100}>
                             <div className="bg-primary rounded-4 px-5 py-6 border border-white border-opacity-10 bg-opacity-75">
                                 <p className="text-white opacity-75">With 10+ years of WordPress development experience, I can help bring your plugin ideas to life or improve your existing WordPress projects.</p>
                                 <div className="mt-4">

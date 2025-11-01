@@ -6,7 +6,7 @@ export default function Section1() {
             {/*data-analysis home section 1*/}
             <section className="data-analysis-home-section-1 position-relative overflow-hidden pt-250">
                 <div className="position-absolute top-50 start-50 translate-middle w-100 z-0">
-                    <img src="assets/imgs/pages/data-analysis/page-home/home-section-1/img-bg.png" alt="AstraX" />
+                    <img src="assets/imgs/pages/data-analysis/page-home/home-section-1/img-bg.png" alt="BooSkills WordPress Plugin Development Course" />
                 </div>
                 <div className="container position-relative z-1">
                     <div className="row align-items-center">
@@ -45,7 +45,7 @@ export default function Section1() {
                         </div>
                         <div className="col-lg-5 offset-lg-1 mt-lg-0 mt-8">
                             <div className="parallax-item">
-                                <img className="img-fluid" data-aos="zoom-in" src="assets/imgs/pages/data-analysis/page-home/home-section-1/img-1.png" alt="AstraX" />
+                                <img className="img-fluid" data-aos="zoom-in" src="assets/imgs/pages/data-analysis/page-home/home-section-1/img-1.png" alt="WordPress Plugin Development Learning" />
                             </div>
                         </div>
                     </div>

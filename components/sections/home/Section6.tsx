@@ -54,7 +54,7 @@ export default function Section6() {
             <section className="data-analysis-home-section-6 position-relative overflow-hidden pt-120">
                 <div className="custom-container bg-primary rounded-5 position-relative">
                     <div className="position-absolute top-0 start-50 translate-middle-x w-100 z-0">
-                        <img className="w-100" src="assets/imgs/pages/data-analysis/page-home/home-section-6/dot-map.png" alt="AstraX" />
+                        <img className="w-100" src="assets/imgs/pages/data-analysis/page-home/home-section-6/dot-map.png" alt="BooSkills Course Testimonials" />
                     </div>
                     <div className="container py-120 position-relative z-1">
                         <div className="row">
@@ -73,7 +73,7 @@ export default function Section6() {
                                             <div className="row align-items-center">
                                                 <div className="col-lg-6">
                                                     <div className="position-relative text-center">
-                                                        <img src="assets/imgs/pages/data-analysis/page-home/home-section-6/author-1.png" alt="AstraX" />
+                                                        <img src="assets/imgs/pages/data-analysis/page-home/home-section-6/author-1.png" alt="Student Testimonial" />
                                                         <div className="ellipse-1 position-absolute top-50 start-50 translate-middle" />
                                                         <div className="ellipse-2 position-absolute top-50 start-50 translate-middle" />
                                                     </div>
