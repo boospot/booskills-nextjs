@@ -186,7 +186,7 @@ export default function Section1() {
                                             className="btn btn-primary hover-up" 
                                             type="submit" 
                                             aria-label="submit"
-                                            disabled={isSubmitting || (hcaptchaSiteKey && !hcaptchaToken)}
+                                            disabled={isSubmitting || (!!hcaptchaSiteKey && !hcaptchaToken)}
                                         >
                                             <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                                             {!isSubmitting && (
