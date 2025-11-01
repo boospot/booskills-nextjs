@@ -19,7 +19,7 @@ export default function Section1() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<{ type: "success" | "error" | null; message: string }>({ type: null, message: "" });
     const [hcaptchaToken, setHcaptchaToken] = useState<string | null>(null);
-    const hcaptchaRef = useRef<HCaptcha>(null);
+    const hcaptchaRef = useRef<any>(null);
     const hcaptchaSiteKey = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || "";
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
