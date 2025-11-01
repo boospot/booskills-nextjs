@@ -2,8 +2,13 @@
 
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import dynamic from "next/dynamic";
 import AOS from "aos";
+
+const HCaptcha = dynamic(() => import("@hcaptcha/react-hcaptcha").then((mod) => mod.default), {
+    ssr: false,
+    loading: () => <div className="hcaptcha-loading" style={{ minHeight: "78px" }}>Loading verification...</div>
+});
 
 export default function Section1() {
     const [formData, setFormData] = useState({
