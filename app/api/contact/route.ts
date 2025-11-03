@@ -7,7 +7,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request: Request) {
     try {
         // BotID verification - Check if request is from a bot
-        const botVerification = await checkBotId(request);
+        // checkBotId automatically reads from request headers on Vercel platform
+        const botVerification = await checkBotId();
         
         if (botVerification.isBot) {
             console.warn('Bot detected by BotID:', botVerification);
