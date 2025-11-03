@@ -18,6 +18,7 @@ import type { Metadata } from "next";
 import { Libre_Franklin, Rubik } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const libreFranklinHeading = Libre_Franklin({
     weight: ["300", "400", "500", "600", "700"], // Only bold for headings
@@ -96,6 +97,7 @@ export default function RootLayout({
                 <Script src="https://botid.vercel.app/api.js" strategy="afterInteractive" />
                 {children}
                 <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     );
