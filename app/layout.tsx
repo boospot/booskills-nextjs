@@ -17,6 +17,7 @@ import "/public/assets/css/style.css";
 import type { Metadata } from "next";
 import { Libre_Franklin, Rubik } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 const libreFranklinHeading = Libre_Franklin({
     weight: ["300", "400", "500", "600", "700"], // Only bold for headings
@@ -94,6 +95,7 @@ export default function RootLayout({
                 {/* BotID script - automatically loads BotID protection */}
                 <Script src="https://botid.vercel.app/api.js" strategy="afterInteractive" />
                 {children}
+                <Analytics />
             </body>
         </html>
     );

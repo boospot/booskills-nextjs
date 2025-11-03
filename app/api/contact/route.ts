@@ -10,11 +10,24 @@ export async function POST(request: Request) {
         // checkBotId automatically reads from request headers on Vercel platform
         const botVerification = await checkBotId();
         
-        if (botVerification.isBot) {
-            console.warn('Bot detected by BotID:', botVerification);
+        // Log BotID verification results (check Vercel function logs)
+        console.log('BotID Verification:', {
+            isBot: botVerification.isBot,
+            isHuman: botVerification.isHuman,
+            isVerifiedBot: botVerification.isVerifiedBot,
+            bypassed: botVerification.bypassed
+        });
+        
+        if (botVerification.isBot && !botVerification.isVerifiedBot) {
+            console.warn('Bot detected by BotID (blocked):', botVerification);
             return NextResponse.json({ 
                 error: 'Access denied. Please try again.' 
             }, { status: 403 });
+        }
+        
+        // Allow verified bots (like search engines) through
+        if (botVerification.isVerifiedBot) {
+            console.log('Verified bot allowed:', botVerification);
         }
 
         // Check if API key is set
