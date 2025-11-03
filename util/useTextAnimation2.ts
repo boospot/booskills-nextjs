@@ -13,6 +13,15 @@ export default function useTextAnimation2() {
     if (typeof window === "undefined") return
 
     const setupAnimation = async () => {
+      // Wait for fonts to load before using SplitText
+      // This prevents the "SplitText called before fonts loaded" warning
+      try {
+        await document.fonts.ready
+      } catch (error) {
+        // Fallback: wait a bit if fonts.ready fails
+        await new Promise(resolve => setTimeout(resolve, 100))
+      }
+
       // Register ScrollTrigger
       gsap.registerPlugin(ScrollTrigger)
 
@@ -25,7 +34,7 @@ export default function useTextAnimation2() {
         console.warn("SplitText plugin not available. Falling back to simpler animation.")
       }
 
-      // Select all elements with the class 'text-anime-style-3'
+      // Select all elements with the class 'text-anime-style-2'
       const elements = document.querySelectorAll('.text-anime-style-2')
 
       elements.forEach((element) => {

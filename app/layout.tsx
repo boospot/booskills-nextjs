@@ -16,7 +16,6 @@ import "/public/assets/css/style.css";
 
 import type { Metadata } from "next";
 import { Libre_Franklin, Rubik } from "next/font/google";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -25,6 +24,11 @@ const libreFranklinHeading = Libre_Franklin({
     subsets: ["latin"],
     variable: "--tc-heading-font-family",
     display: "swap",
+    // Only preload the most commonly used weights to reduce preload warnings
+    preload: true,
+    adjustFontFallback: true,
+    // Reduce font weights to only what's needed to minimize preload warnings
+    fallback: ["system-ui", "arial"],
 });
 
 const rubik = Rubik({
@@ -32,6 +36,10 @@ const rubik = Rubik({
     subsets: ["latin"],
     variable: "--tc-body-font-family",
     display: "swap",
+    // Only preload the most commonly used weights to reduce preload warnings
+    preload: true,
+    adjustFontFallback: true,
+    fallback: ["system-ui", "arial"],
 });
 
 export const metadata: Metadata = {
@@ -91,10 +99,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={`${libreFranklinHeading.variable} ${rubik.variable}`}>
-                {/* BotID script - automatically loads BotID protection */}
-                <Script src="https://botid.vercel.app/api.js" strategy="afterInteractive" />
+        <html lang="en" suppressHydrationWarning>
+            <body className={`${libreFranklinHeading.variable} ${rubik.variable}`} suppressHydrationWarning>
                 {children}
                 <Analytics />
                 <SpeedInsights />

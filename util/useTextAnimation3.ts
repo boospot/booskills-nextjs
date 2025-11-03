@@ -25,25 +25,35 @@ export default function useTextAnimation3() {
 	useEffect(() => {
 		if (typeof window === "undefined") return
 
-		// Cast querySelectorAll result to HTMLElement
-		elementsRef.current = Array.from(
-			document.querySelectorAll(".text-anime-style-3") as NodeListOf<HTMLElement>
-		)
-
-		if (elementsRef.current.length === 0) {
-			console.warn("No elements with class 'text-anime-style-3' found.")
-			return
-		}
-
-		elementsRef.current.forEach((element) => {
-			if (element.animation) {
-				element.animation.progress(1).kill()
-			}
-			if (element.split) {
-				element.innerHTML = element.split.originalHTML
+		const setupAnimation = async () => {
+			// Wait for fonts to load before using SplitText
+			// This prevents the "SplitText called before fonts loaded" warning
+			try {
+				await document.fonts.ready
+			} catch (error) {
+				// Fallback: wait a bit if fonts.ready fails
+				await new Promise(resolve => setTimeout(resolve, 100))
 			}
 
-			element.split = splitText(element)
+			// Cast querySelectorAll result to HTMLElement
+			elementsRef.current = Array.from(
+				document.querySelectorAll(".text-anime-style-3") as NodeListOf<HTMLElement>
+			)
+
+			if (elementsRef.current.length === 0) {
+				console.warn("No elements with class 'text-anime-style-3' found.")
+				return
+			}
+
+			elementsRef.current.forEach((element) => {
+				if (element.animation) {
+					element.animation.progress(1).kill()
+				}
+				if (element.split) {
+					element.innerHTML = element.split.originalHTML
+				}
+
+				element.split = splitText(element)
 
 			gsap.set(element, { perspective: 400 })
 			gsap.set(element.split.chars, { opacity: 0, x: 50 })
@@ -61,6 +71,9 @@ export default function useTextAnimation3() {
 				stagger: 0.03,
 			})
 		})
+		}
+
+		setupAnimation()
 
 		return () => {
 			elementsRef.current.forEach((element) => {
