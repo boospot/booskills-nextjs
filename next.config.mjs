@@ -2,6 +2,12 @@
 const nextConfig = {
     async redirects() {
         return [
+            // BotID redirect (required for BotID to work)
+            {
+                source: '/_botid',
+                destination: 'https://botid.vercel.app/api',
+                permanent: true,
+            },
             // Hire page redirects to contact
             {
                 source: '/hire',

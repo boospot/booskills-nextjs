@@ -31,7 +31,7 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: MobileMen
                 <div className="mobile-header-wrapper-inner">
                     <div className="mobile-header-logo">
                         <Link className="d-flex align-items-center gap-2" href="/">
-                            <img src="/booskills-logo-white.svg" alt="BooSkills" width="140" height="73" style={{maxWidth: "140px"}} />
+                            <img src="/booskills-logo-black-1.svg" alt="BooSkills" width="140" height="73" style={{maxWidth: "140px"}} />
                         </Link>
                         <div className={`burger-icon burger-icon-white border rounded-circle ${isMobileMenu ? "burger-close" : ""}`} onClick={handleMobileMenu}>
                             <span className="burger-icon-top" />
@@ -65,7 +65,7 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: MobileMen
                         <div className="contact-info">
                             <ul className="list-wrap">
                                 <li>
-                                    <span className="opacity-50">Mail:</span> <Link href="mailto:info@booskills.com">info@booskills.com</Link>
+                                    <span className="opacity-50">Mail:</span> <a href={`mailto:${['rao', '@', 'booskills', '.', 'com'].join('')}`} className="text-decoration-none" style={{color: "inherit"}} dangerouslySetInnerHTML={{ __html: ['rao', '&#64;', 'booskills', '.', 'com'].join('') }} />
                                 </li>
                             </ul>
                         </div>

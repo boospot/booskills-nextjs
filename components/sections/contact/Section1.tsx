@@ -5,6 +5,12 @@ import { useState, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 import AOS from "aos";
 
+// Email obfuscation to prevent bot scraping
+const getEmail = () => {
+    const parts = ['rao', '@', 'booskills', '.', 'com'];
+    return parts.join('');
+};
+
 const HCaptcha = dynamic(() => import("@hcaptcha/react-hcaptcha").then((mod) => mod.default), {
     ssr: false,
     loading: () => <div className="hcaptcha-loading" style={{ minHeight: "78px" }}>Loading verification...</div>
@@ -108,7 +114,7 @@ export default function Section1() {
     return (
         <>
             {/*data-analysis contact section 1*/}
-            <section className="data-analysis-contact-section-1 position-relative overflow-hidden py-120">
+            <section id="contact-form" className="data-analysis-contact-section-1 position-relative overflow-hidden py-120">
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-6 ms-lg-auto mt-lg-0 mt-5 d-none d-lg-block">
@@ -117,9 +123,9 @@ export default function Section1() {
                             </div>
                         </div>
                         <div className="col-lg-6 col-12">
-                            <span className="btn-text fs-7 text-primary">Hire For Plugin Development</span>
+                            <span className="btn-text fs-7 text-primary">Hire For Development</span>
                             <h2 className="mb-6 mt-3 text-anime-style-2">Let's discuss your project</h2>
-                            <p className="mb-4">I'm available for freelance WordPress plugin development projects. Whether you need a custom plugin, have an existing plugin that needs improvements, or want to add specific functionality to your WordPress site, I'd love to hear from you.</p>
+                            <p className="mb-4">I'm available for freelance WordPress development projects. Whether you need custom development, have an existing project that needs improvements, or want to add specific functionality to your WordPress site, I'd love to hear from you.</p>
                             <form onSubmit={handleSubmit} className="input-group mb-3 mt-4 position-relative">
                                 {submitStatus.type && (
                                     <div className={`alert ${submitStatus.type === "success" ? "alert-success" : "alert-danger"} mb-4`} role="alert">
@@ -211,9 +217,9 @@ export default function Section1() {
                         <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay={200} data-aos-once="true">
                             <div className=" pe-md-10">
                                 <h6 className="pb-2 mb-4 border-bottom border-2">Get in touch</h6>
-                                <Link href="mailto:info@booskills.com">
-                                    <p className="mb-0">info@booskills.com</p>
-                                </Link>
+                                <a href={`mailto:${getEmail()}`} className="text-dark text-decoration-none">
+                                    <p className="mb-0" dangerouslySetInnerHTML={{ __html: getEmail().replace('@', '&#64;') }} />
+                                </a>
                                 <p className="mb-0 mt-3 text-muted">I typically respond within 24 hours</p>
                             </div>
                         </div>

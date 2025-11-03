@@ -14,6 +14,25 @@
     background-size: cover;
 }
 
+/* Responsive padding for header clearance on smaller screens */
+@media (max-width: 991px) {
+    .data-analysis-home-section-1 {
+        padding-top: 140px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .data-analysis-home-section-1 {
+        padding-top: 120px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .data-analysis-home-section-1 {
+        padding-top: 100px !important;
+    }
+}
+
 .data-analysis-section-header {
     background-color: #f7f5ff;
     background-position: center;

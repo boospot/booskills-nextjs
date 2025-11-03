@@ -12,6 +12,7 @@
         "@hcaptcha/react-hcaptcha": "^1.14.0",
         "aos": "^2.3.4",
         "bootstrap": "^5.3.3",
+        "botid": "^1.5.10",
         "gsap": "^3.12.7",
         "isotope-layout": "^3.0.6",
         "next": "^14.2.1",

@@ -1,10 +1,21 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import { checkBotId } from 'botid/server';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
     try {
+        // BotID verification - Check if request is from a bot
+        const botVerification = await checkBotId(request);
+        
+        if (botVerification.isBot) {
+            console.warn('Bot detected by BotID:', botVerification);
+            return NextResponse.json({ 
+                error: 'Access denied. Please try again.' 
+            }, { status: 403 });
+        }
+
         // Check if API key is set
         if (!process.env.RESEND_API_KEY) {
             return NextResponse.json({ 
@@ -13,7 +24,7 @@ export async function POST(request: Request) {
         }
 
         // Check if contact email is set
-        const contactEmail = process.env.CONTACT_EMAIL || 'info@booskills.com';
+        const contactEmail = process.env.CONTACT_EMAIL || 'rao@booskills.com';
         const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev';
 
         // Parse form data
